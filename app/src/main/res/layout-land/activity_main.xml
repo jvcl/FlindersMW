@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/textView2"
+                android:id="@+id/text_status"
                 android:textSize="100sp" />
         </LinearLayout>
     </LinearLayout>
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
-                android:id="@+id/textView"
+                android:id="@+id/text_time"
                 android:textSize="40sp"
                 android:gravity="center_horizontal" />
         </LinearLayout>
@@ -71,7 +71,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="1s"
-                    android:id="@+id/button"
+                    android:id="@+id/button_1s"
                     android:layout_weight="1"
                     android:textAllCaps="false"
                     style="@style/buttonStyle"/>
@@ -80,7 +80,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="10s"
-                    android:id="@+id/button2"
+                    android:id="@+id/button_10s"
                     android:layout_weight="1"
                     style="@style/buttonStyle" />
 
@@ -88,7 +88,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="30s"
-                    android:id="@+id/button3"
+                    android:id="@+id/button_30s"
                     android:layout_weight="1"
                     style="@style/buttonStyle" />
             </LinearLayout>
@@ -103,7 +103,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="1m"
-                    android:id="@+id/button4"
+                    android:id="@+id/button_1m"
                     android:layout_weight="1"
                     style="@style/buttonStyle" />
 
@@ -111,7 +111,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="5m"
-                    android:id="@+id/button4"
+                    android:id="@+id/button_5m"
                     android:layout_weight="1"
                     style="@style/buttonStyle" />
 
@@ -119,7 +119,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="10m"
-                    android:id="@+id/button4"
+                    android:id="@+id/button_10m"
                     android:layout_weight="1"
                     style="@style/buttonStyle" />
             </LinearLayout>
@@ -134,7 +134,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="1h"
-                    android:id="@+id/button5"
+                    android:id="@+id/button_1h"
                     android:layout_weight="1"
                     style="@style/buttonStyle" />
 
@@ -142,7 +142,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="Clear"
-                    android:id="@+id/button5"
+                    android:id="@+id/button_clear"
                     android:layout_weight="2"
                     style="@style/buttonStyle" />
 
@@ -165,7 +165,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="Start"
-                    android:id="@+id/button6"
+                    android:id="@+id/button_start"
                     android:layout_weight="1"
                     style="@style/buttonStyle" />
 
@@ -173,7 +173,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="Stop"
-                    android:id="@+id/button7"
+                    android:id="@+id/button_stop"
                     android:layout_weight="1"
                     style="@style/buttonStyle" />
             </LinearLayout>
@@ -188,7 +188,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Open/Close"
-                    android:id="@+id/button8"
+                    android:id="@+id/button_open_close"
                     style="@style/buttonStyle" />
             </LinearLayout>
         </LinearLayout>
