@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         });
 
-        if (timer ==0){
+        if (timer == 0 && t != null){
             t.cancel();
         }
     }
@@ -169,7 +169,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 timer = 0;
                 updateUI();
                 paused =false;
-
             }
         }
         if (id == R.id.button_open_close){
@@ -181,12 +180,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }else {
                 statusText.setText("Open");
                 doorOpened = true;
+                if (t != null){
+                    t.cancel();
+                }
+                timer = 0;
+                updateUI();
             }
-
         }
     }
     private String converTimeToString(int totalSecs){
-
         int hours = totalSecs / 3600;
         int minutes = (totalSecs % 3600) / 60;
         int seconds = totalSecs % 60;
