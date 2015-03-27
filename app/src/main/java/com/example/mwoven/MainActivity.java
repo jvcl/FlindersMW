@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Time;
 import java.util.Timer;
@@ -21,7 +22,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     int timer = 0;
     Timer t;
     boolean paused = false;
-    boolean doorOpened = false;
+    boolean doorOpened = true;
     //door status
     //0 closed
     //1 open
@@ -35,7 +36,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         timeText = (TextView) findViewById(R.id.text_time);
         statusText = (TextView) findViewById(R.id.text_status);
         timeText.setText("0:00:00");
-        statusText.setText("Closed");
 
         Button[] buttons = {
                 (Button) findViewById(R.id.button_1s),
@@ -139,6 +139,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if (id == R.id.button_start){
             if (timer <= 0){
                 timer = 0;
+                Toast.makeText(this, "Select Time", Toast.LENGTH_SHORT).show();
                 return;
             }
             t = new Timer("time");
