@@ -51,7 +51,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
                 android:id="@+id/text_time"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:gravity="center_horizontal" />
         </LinearLayout>
 
@@ -175,7 +175,8 @@
                     android:text="Stop"
                     android:id="@+id/button_stop"
                     android:layout_weight="1"
-                    style="@style/buttonStyle" />
+                    style="@style/buttonStyle"
+                    android:enabled="false" />
             </LinearLayout>
 
             <LinearLayout
