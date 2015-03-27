@@ -4,14 +4,42 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
+    TextView timeText, statusText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        timeText = (TextView) findViewById(R.id.text_time);
+        timeText.setText("0:00:00");
+        statusText = (TextView) findViewById(R.id.text_status);
+        statusText.setText("Closed");
+
+        Button[] buttons = {
+                (Button) findViewById(R.id.button_1s),
+                (Button) findViewById(R.id.button_10s),
+                (Button) findViewById(R.id.button_30s),
+                (Button) findViewById(R.id.button_1m),
+                (Button) findViewById(R.id.button_5m),
+                (Button) findViewById(R.id.button_10m),
+                (Button) findViewById(R.id.button_1h),
+                (Button) findViewById(R.id.button_clear),
+                (Button) findViewById(R.id.button_start),
+                (Button) findViewById(R.id.button_stop),
+                (Button) findViewById(R.id.button_open_close),
+        };
+
+        for (Button button : buttons){
+            button.setOnClickListener(this);
+        }
+
     }
 
 
@@ -35,5 +63,10 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
