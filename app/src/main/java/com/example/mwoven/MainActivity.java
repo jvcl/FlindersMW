@@ -27,6 +27,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     //0 closed
     //1 open
     //2 cooking
+    //3 Pause
+    int doorStatus= 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             @Override
             public void run() {
                 timeText.setText(converTimeToString(timer));
+                if (doorStatus>1) {
+                    statusText.setText("Cooking");
+                }
 
             }
 
@@ -116,6 +121,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         if (id == R.id.button_1m){
             timer+=60;
+            updateUI();
 
         }
         if (id == R.id.button_5m){
@@ -135,6 +141,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         if (id == R.id.button_clear){
 
+            if (timer >0){
+                timer = 0;
+                updateUI();
+            }
+
         }
         if (id == R.id.button_start){
             if (timer <= 0 || doorOpened){
@@ -144,6 +155,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
             t = new Timer("time");
             paused = false;
+            doorStatus = 2;
             t.schedule(new TimerTask() {
                 @Override
                 public void run() {
@@ -154,6 +166,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             findViewById(R.id.button_start).setEnabled(false);
             findViewById(R.id.button_stop).setEnabled(true);
+            findViewById(R.id.button_clear).setEnabled(false);
 
         }
         if (id == R.id.button_stop){
@@ -162,24 +175,38 @@ public class MainActivity extends Activity implements View.OnClickListener {
             if(!paused){
                 findViewById(R.id.button_start).setEnabled(true);
                 findViewById(R.id.button_stop).setEnabled(true);
+                findViewById(R.id.button_clear).setEnabled(false);
                 paused = true;
+                statusText.setText("Pause");
             }else {
                 findViewById(R.id.button_start).setEnabled(true);
                 findViewById(R.id.button_stop).setEnabled(false);
+                findViewById(R.id.button_clear).setEnabled(true);
                 timer = 0;
+                doorStatus =0;
+                statusText.setText("Close");
                 updateUI();
                 paused =false;
+
             }
         }
         if (id == R.id.button_open_close){
 
             if(doorOpened){
+                findViewById(R.id.button_start).setEnabled(true);
+                findViewById(R.id.button_stop).setEnabled(false);
+                findViewById(R.id.button_clear).setEnabled(true);
                 statusText.setText("Close");
+                doorStatus = 0;
                 doorOpened = false;
 
             }else {
                 statusText.setText("Open");
+                findViewById(R.id.button_start).setEnabled(false);
+                findViewById(R.id.button_stop).setEnabled(false);
+                findViewById(R.id.button_clear).setEnabled(true);
                 doorOpened = true;
+                doorStatus = 1;
                 if (t != null){
                     t.cancel();
                 }

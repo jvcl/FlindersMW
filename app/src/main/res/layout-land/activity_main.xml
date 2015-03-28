@@ -167,7 +167,8 @@
                     android:text="Start"
                     android:id="@+id/button_start"
                     android:layout_weight="1"
-                    style="@style/buttonStyle" />
+                    style="@style/buttonStyle"
+                    android:enabled="false" />
 
                 <Button
                     android:layout_width="0dp"
@@ -190,7 +191,8 @@
                     android:layout_height="match_parent"
                     android:text="Open/Close"
                     android:id="@+id/button_open_close"
-                    style="@style/buttonStyle" />
+                    style="@style/buttonStyle"
+                    android:enabled="true" />
             </LinearLayout>
         </LinearLayout>
 
