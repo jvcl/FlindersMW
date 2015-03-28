@@ -139,7 +139,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if (id == R.id.button_start){
             if (timer <= 0 || doorOpened){
                 timer = 0;
-                Toast.makeText(this, "Select Time", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Select Time or Close Door", Toast.LENGTH_SHORT).show();
                 return;
             }
             t = new Timer("time");
